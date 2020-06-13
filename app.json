@@ -1,18 +1,23 @@
 {
   "expo": {
-    "name": "MediMaps",
-    "slug": "MediMaps",
+    "name": "GrabCab Driver",
+    "description": "Taxi Booking Driver App",
+    "slug": "GrabCabDriver",
+    "privacy": "public",
+    "sdkVersion": "36.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
+      "android"
     ],
-    "version": "1.0.0",
+    "notification": {
+      "icon": "./assets/images/push_notification.png"
+    },
+    "version": "4.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "./assets/images/splash.png",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
@@ -22,7 +27,38 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.exicube.grabcabdriverapp",
+      "infoPlist": {
+            "NSLocationAlwaysUsageDescription": "This app uses the location to find the Cabs near you.",
+            "NSLocationWhenInUseUsageDescription": "This app uses the location to find the Cabs near you.",
+            "NSCameraUsageDescription": "This app uses the camera to take your profile picture.",
+            "NSPhotoLibraryUsageDescription": "This app uses Photo Library to help upload your profile picture.",
+            "UIBackgroundModes": [
+            "location",
+            "fetch"
+            ]
+      },
+      "config": {
+        "googleMapsApiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      }
+    },
+    "android": {
+      "package": "com.exicube.grabcabdriverapp",
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA_ROLL"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+      }
     }
   }
 }
